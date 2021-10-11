@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:watch_my_stock/ui/router.gr.dart';
+import 'package:watch_my_stock/ui/routes/router.gr.dart';
 
 void main() {
   runApp(MyApp());
