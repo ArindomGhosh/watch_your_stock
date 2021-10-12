@@ -20,5 +20,7 @@ class AppError with _$AppError {
 
   const factory AppError.forbidden() = Forbidden;
 
+  const factory AppError.noDataFoundException() = NoDataFoundException;
+
   const factory AppError.timeOutError() = TimeOutError;
 }

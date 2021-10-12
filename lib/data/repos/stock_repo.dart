@@ -3,7 +3,7 @@ import 'package:watch_my_stock/data/repos/i_stock_repo.dart';
 
 class StockRepo implements IStockRepo{
   @override
-  Future<Stock> getAllStocks() {
+  Future<List<Stock>> getAllStocks() {
     // TODO: implement getAllStocks
     throw UnimplementedError();
   }
