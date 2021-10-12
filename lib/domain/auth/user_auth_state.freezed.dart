@@ -21,14 +21,12 @@ class _$UserAuthStateTearOff {
       {required String email,
       required String password,
       required bool isLoading,
-      UserEntity? userEntity,
-      AppError? appError}) {
+      AppData<UserEntity?>? appData}) {
     return _UserAuthState(
       email: email,
       password: password,
       isLoading: isLoading,
-      userEntity: userEntity,
-      appError: appError,
+      appData: appData,
     );
   }
 }
@@ -41,8 +39,7 @@ mixin _$UserAuthState {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
-  UserEntity? get userEntity => throw _privateConstructorUsedError;
-  AppError? get appError => throw _privateConstructorUsedError;
+  AppData<UserEntity?>? get appData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserAuthStateCopyWith<UserAuthState> get copyWith =>
@@ -58,11 +55,9 @@ abstract class $UserAuthStateCopyWith<$Res> {
       {String email,
       String password,
       bool isLoading,
-      UserEntity? userEntity,
-      AppError? appError});
+      AppData<UserEntity?>? appData});
 
-  $UserEntityCopyWith<$Res>? get userEntity;
-  $AppErrorCopyWith<$Res>? get appError;
+  $AppDataCopyWith<UserEntity?, $Res>? get appData;
 }
 
 /// @nodoc
@@ -79,8 +74,7 @@ class _$UserAuthStateCopyWithImpl<$Res>
     Object? email = freezed,
     Object? password = freezed,
     Object? isLoading = freezed,
-    Object? userEntity = freezed,
-    Object? appError = freezed,
+    Object? appData = freezed,
   }) {
     return _then(_value.copyWith(
       email: email == freezed
@@ -95,36 +89,21 @@ class _$UserAuthStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      userEntity: userEntity == freezed
-          ? _value.userEntity
-          : userEntity // ignore: cast_nullable_to_non_nullable
-              as UserEntity?,
-      appError: appError == freezed
-          ? _value.appError
-          : appError // ignore: cast_nullable_to_non_nullable
-              as AppError?,
+      appData: appData == freezed
+          ? _value.appData
+          : appData // ignore: cast_nullable_to_non_nullable
+              as AppData<UserEntity?>?,
     ));
   }
 
   @override
-  $UserEntityCopyWith<$Res>? get userEntity {
-    if (_value.userEntity == null) {
+  $AppDataCopyWith<UserEntity?, $Res>? get appData {
+    if (_value.appData == null) {
       return null;
     }
 
-    return $UserEntityCopyWith<$Res>(_value.userEntity!, (value) {
-      return _then(_value.copyWith(userEntity: value));
-    });
-  }
-
-  @override
-  $AppErrorCopyWith<$Res>? get appError {
-    if (_value.appError == null) {
-      return null;
-    }
-
-    return $AppErrorCopyWith<$Res>(_value.appError!, (value) {
-      return _then(_value.copyWith(appError: value));
+    return $AppDataCopyWith<UserEntity?, $Res>(_value.appData!, (value) {
+      return _then(_value.copyWith(appData: value));
     });
   }
 }
@@ -140,13 +119,10 @@ abstract class _$UserAuthStateCopyWith<$Res>
       {String email,
       String password,
       bool isLoading,
-      UserEntity? userEntity,
-      AppError? appError});
+      AppData<UserEntity?>? appData});
 
   @override
-  $UserEntityCopyWith<$Res>? get userEntity;
-  @override
-  $AppErrorCopyWith<$Res>? get appError;
+  $AppDataCopyWith<UserEntity?, $Res>? get appData;
 }
 
 /// @nodoc
@@ -165,8 +141,7 @@ class __$UserAuthStateCopyWithImpl<$Res>
     Object? email = freezed,
     Object? password = freezed,
     Object? isLoading = freezed,
-    Object? userEntity = freezed,
-    Object? appError = freezed,
+    Object? appData = freezed,
   }) {
     return _then(_UserAuthState(
       email: email == freezed
@@ -181,14 +156,10 @@ class __$UserAuthStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      userEntity: userEntity == freezed
-          ? _value.userEntity
-          : userEntity // ignore: cast_nullable_to_non_nullable
-              as UserEntity?,
-      appError: appError == freezed
-          ? _value.appError
-          : appError // ignore: cast_nullable_to_non_nullable
-              as AppError?,
+      appData: appData == freezed
+          ? _value.appData
+          : appData // ignore: cast_nullable_to_non_nullable
+              as AppData<UserEntity?>?,
     ));
   }
 }
@@ -200,8 +171,7 @@ class _$_UserAuthState extends _UserAuthState {
       {required this.email,
       required this.password,
       required this.isLoading,
-      this.userEntity,
-      this.appError})
+      this.appData})
       : super._();
 
   @override
@@ -211,13 +181,11 @@ class _$_UserAuthState extends _UserAuthState {
   @override
   final bool isLoading;
   @override
-  final UserEntity? userEntity;
-  @override
-  final AppError? appError;
+  final AppData<UserEntity?>? appData;
 
   @override
   String toString() {
-    return 'UserAuthState(email: $email, password: $password, isLoading: $isLoading, userEntity: $userEntity, appError: $appError)';
+    return 'UserAuthState(email: $email, password: $password, isLoading: $isLoading, appData: $appData)';
   }
 
   @override
@@ -232,12 +200,8 @@ class _$_UserAuthState extends _UserAuthState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
-            (identical(other.userEntity, userEntity) ||
-                const DeepCollectionEquality()
-                    .equals(other.userEntity, userEntity)) &&
-            (identical(other.appError, appError) ||
-                const DeepCollectionEquality()
-                    .equals(other.appError, appError)));
+            (identical(other.appData, appData) ||
+                const DeepCollectionEquality().equals(other.appData, appData)));
   }
 
   @override
@@ -246,8 +210,7 @@ class _$_UserAuthState extends _UserAuthState {
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(userEntity) ^
-      const DeepCollectionEquality().hash(appError);
+      const DeepCollectionEquality().hash(appData);
 
   @JsonKey(ignore: true)
   @override
@@ -260,8 +223,7 @@ abstract class _UserAuthState extends UserAuthState {
       {required String email,
       required String password,
       required bool isLoading,
-      UserEntity? userEntity,
-      AppError? appError}) = _$_UserAuthState;
+      AppData<UserEntity?>? appData}) = _$_UserAuthState;
   const _UserAuthState._() : super._();
 
   @override
@@ -271,9 +233,7 @@ abstract class _UserAuthState extends UserAuthState {
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
-  UserEntity? get userEntity => throw _privateConstructorUsedError;
-  @override
-  AppError? get appError => throw _privateConstructorUsedError;
+  AppData<UserEntity?>? get appData => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserAuthStateCopyWith<_UserAuthState> get copyWith =>

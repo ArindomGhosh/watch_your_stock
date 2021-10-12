@@ -4,6 +4,8 @@ import '../remote/requests/user_auth_request.dart';
 abstract class IAuthRepo {
   Future<AuthResponse> signIn(UserAuthRequest signInRequest);
 
+  Future<User?> getUserDetails();
+
   Future<bool> signOut();
 
   Future<AuthResponse> signUp(UserAuthRequest signUpRequest);

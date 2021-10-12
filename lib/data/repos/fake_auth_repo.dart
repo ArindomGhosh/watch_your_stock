@@ -10,14 +10,20 @@ class FakeAuthRepo implements IAuthRepo{
   }
 
   @override
-  Future<bool> signOut() {
-    // TODO: implement signOut
+  Future<AuthResponse> signUp(UserAuthRequest signUpRequest) {
+    // TODO: implement signUp
     throw UnimplementedError();
   }
 
   @override
-  Future<AuthResponse> signUp(UserAuthRequest signUpRequest) {
-    // TODO: implement signUp
+  Future<User?> getUserDetails() {
+    // TODO: implement getUserDetails
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool> signOut() {
+    // TODO: implement signOut
     throw UnimplementedError();
   }
 }

@@ -4,6 +4,7 @@ import 'package:watch_my_stock/domain/entities/user_entity.dart';
 import 'i_app_domain_mapper.dart';
 
 class UserEntityDomainMapper implements DomainMapper<User, UserEntity> {
+  const UserEntityDomainMapper();
   @override
   User fromDomainModel(UserEntity domainModel) {
     return User(
