@@ -39,7 +39,7 @@ main() {
 
   test('test if getUserDetails returns UnAuthorized if user info not present',
       () async {
-    when(authRepo.getUserDetails()).thenAnswer((_) => Future(() => mockUser));
+    when(authRepo.getUserDetails()).thenAnswer((_) => Future(() => null));
     userComponent.getUserDetails().listen((event) {
       expect(event, AppData(appError: UnAuthorized()));
     });
