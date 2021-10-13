@@ -24,6 +24,7 @@ class UserAuthCubit extends Cubit<UserAuthState> {
       email: email,
       password: password,
     ));
+
     _performAuthAction(
       _authRepo.signIn(
         UserAuthRequest(
@@ -38,7 +39,11 @@ class UserAuthCubit extends Cubit<UserAuthState> {
     String email,
     String password,
   ) async {
-    emit(state.copyWith(isLoading: true));
+    emit(state.copyWith(
+      isLoading: true,
+      email: email,
+      password: password,
+    ));
     _performAuthAction(
       _authRepo.signUp(
         UserAuthRequest(
@@ -57,8 +62,10 @@ class UserAuthCubit extends Cubit<UserAuthState> {
           appError: SignInError('Enter valid Email'),
         ),
       ));
+      return;
     }
-    if (!isValidEmailAddress(state.password)) {
+
+    if (!isValidPassword(state.password)) {
       emit(
         state.copyWith(
           isLoading: false,
@@ -67,6 +74,7 @@ class UserAuthCubit extends Cubit<UserAuthState> {
           ),
         ),
       );
+      return;
     }
 
     authOperation.then((value) {
