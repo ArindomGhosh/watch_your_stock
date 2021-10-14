@@ -4,20 +4,11 @@ import 'package:watch_my_stock/domain/entities/app_error.dart';
 AppError mapToAppError(ResponseError responseError) {
   switch (responseError.errorCode) {
     case 404:
-      {
-        return const ServiceDownError();
-      }
+      return const ServiceDownError();
     case 401:
-      {
-        return const UnAuthorized();
-      }
-      case 403:
-      {
-        return const Forbidden();
-      }
+    case 403:
+      return const UnAuthorized();
     default:
-      {
-        return const UnknownIssue();
-      }
+      return const UnknownIssue();
   }
 }

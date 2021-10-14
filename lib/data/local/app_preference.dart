@@ -3,7 +3,7 @@ import 'package:watch_my_stock/data/remote/responses/auth_response.dart';
 
 class AppPreference {
   final _userName = 'USER_NAME';
-  final _email = 'EmAIL';
+  final _email = 'EMAIL';
   final _userId = ' USER_ID';
   static final AppPreference _appPreference = AppPreference._internal();
 
