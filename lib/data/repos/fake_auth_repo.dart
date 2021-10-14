@@ -7,8 +7,11 @@ import 'package:watch_my_stock/data/remote/responses/response_error.dart';
 import 'package:watch_my_stock/data/repos/i_auth_repo_.dart';
 
 class FakeAuthRepo implements IAuthRepo {
-  final _random = Random();
-  final _appPreference = AppPreference();
+  final Random _random;
+
+  final AppPreference _appPreference;
+
+  FakeAuthRepo(this._random, this._appPreference);
 
   @override
   Future<AuthResponse> signIn(UserAuthRequest signInRequest) async {

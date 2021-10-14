@@ -4,7 +4,9 @@ import 'package:watch_my_stock/data/remote/responses/stock.dart';
 import 'package:watch_my_stock/data/repos/i_stock_repo.dart';
 
 class StockRepo implements IStockRepo {
-  final _random = Random();
+  final Random _random;
+
+  StockRepo(this._random);
 
   @override
   Future<List<Stock>> getAllStocks() {

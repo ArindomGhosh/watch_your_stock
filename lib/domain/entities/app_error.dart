@@ -18,7 +18,7 @@ class AppError with _$AppError {
 
   const factory AppError.unAuthorized() = UnAuthorized;
 
-  const factory AppError.forbidden() = Forbidden;
+  const factory AppError.serverIssue(String message) = ServerIssue;
 
   const factory AppError.noDataFoundException() = NoDataFoundException;
 

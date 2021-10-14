@@ -45,8 +45,10 @@ class _$AppErrorTearOff {
     return const UnAuthorized();
   }
 
-  Forbidden forbidden() {
-    return const Forbidden();
+  ServerIssue serverIssue(String message) {
+    return ServerIssue(
+      message,
+    );
   }
 
   NoDataFoundException noDataFoundException() {
@@ -71,7 +73,7 @@ mixin _$AppError {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) =>
@@ -84,7 +86,7 @@ mixin _$AppError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) =>
@@ -97,7 +99,7 @@ mixin _$AppError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
@@ -111,7 +113,7 @@ mixin _$AppError {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) =>
@@ -124,7 +126,7 @@ mixin _$AppError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) =>
@@ -137,7 +139,7 @@ mixin _$AppError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
@@ -230,7 +232,7 @@ class _$SignUpError extends SignUpError {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) {
@@ -246,7 +248,7 @@ class _$SignUpError extends SignUpError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) {
@@ -262,7 +264,7 @@ class _$SignUpError extends SignUpError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
@@ -282,7 +284,7 @@ class _$SignUpError extends SignUpError {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) {
@@ -298,7 +300,7 @@ class _$SignUpError extends SignUpError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) {
@@ -314,7 +316,7 @@ class _$SignUpError extends SignUpError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
@@ -406,7 +408,7 @@ class _$SignInError extends SignInError {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) {
@@ -422,7 +424,7 @@ class _$SignInError extends SignInError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) {
@@ -438,7 +440,7 @@ class _$SignInError extends SignInError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
@@ -458,7 +460,7 @@ class _$SignInError extends SignInError {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) {
@@ -474,7 +476,7 @@ class _$SignInError extends SignInError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) {
@@ -490,7 +492,7 @@ class _$SignInError extends SignInError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
@@ -557,7 +559,7 @@ class _$UnknownIssue extends UnknownIssue {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) {
@@ -573,7 +575,7 @@ class _$UnknownIssue extends UnknownIssue {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) {
@@ -589,7 +591,7 @@ class _$UnknownIssue extends UnknownIssue {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
@@ -609,7 +611,7 @@ class _$UnknownIssue extends UnknownIssue {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) {
@@ -625,7 +627,7 @@ class _$UnknownIssue extends UnknownIssue {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) {
@@ -641,7 +643,7 @@ class _$UnknownIssue extends UnknownIssue {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
@@ -703,7 +705,7 @@ class _$ServiceDownError extends ServiceDownError {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) {
@@ -719,7 +721,7 @@ class _$ServiceDownError extends ServiceDownError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) {
@@ -735,7 +737,7 @@ class _$ServiceDownError extends ServiceDownError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
@@ -755,7 +757,7 @@ class _$ServiceDownError extends ServiceDownError {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) {
@@ -771,7 +773,7 @@ class _$ServiceDownError extends ServiceDownError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) {
@@ -787,7 +789,7 @@ class _$ServiceDownError extends ServiceDownError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
@@ -849,7 +851,7 @@ class _$SessionExpired extends SessionExpired {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) {
@@ -865,7 +867,7 @@ class _$SessionExpired extends SessionExpired {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) {
@@ -881,7 +883,7 @@ class _$SessionExpired extends SessionExpired {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
@@ -901,7 +903,7 @@ class _$SessionExpired extends SessionExpired {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) {
@@ -917,7 +919,7 @@ class _$SessionExpired extends SessionExpired {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) {
@@ -933,7 +935,7 @@ class _$SessionExpired extends SessionExpired {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
@@ -995,7 +997,7 @@ class _$UnAuthorized extends UnAuthorized {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) {
@@ -1011,7 +1013,7 @@ class _$UnAuthorized extends UnAuthorized {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) {
@@ -1027,7 +1029,7 @@ class _$UnAuthorized extends UnAuthorized {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
@@ -1047,7 +1049,7 @@ class _$UnAuthorized extends UnAuthorized {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) {
@@ -1063,7 +1065,7 @@ class _$UnAuthorized extends UnAuthorized {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) {
@@ -1079,7 +1081,7 @@ class _$UnAuthorized extends UnAuthorized {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
@@ -1097,38 +1099,65 @@ abstract class UnAuthorized extends AppError {
 }
 
 /// @nodoc
-abstract class $ForbiddenCopyWith<$Res> {
-  factory $ForbiddenCopyWith(Forbidden value, $Res Function(Forbidden) then) =
-      _$ForbiddenCopyWithImpl<$Res>;
+abstract class $ServerIssueCopyWith<$Res> {
+  factory $ServerIssueCopyWith(
+          ServerIssue value, $Res Function(ServerIssue) then) =
+      _$ServerIssueCopyWithImpl<$Res>;
+  $Res call({String message});
 }
 
 /// @nodoc
-class _$ForbiddenCopyWithImpl<$Res> extends _$AppErrorCopyWithImpl<$Res>
-    implements $ForbiddenCopyWith<$Res> {
-  _$ForbiddenCopyWithImpl(Forbidden _value, $Res Function(Forbidden) _then)
-      : super(_value, (v) => _then(v as Forbidden));
+class _$ServerIssueCopyWithImpl<$Res> extends _$AppErrorCopyWithImpl<$Res>
+    implements $ServerIssueCopyWith<$Res> {
+  _$ServerIssueCopyWithImpl(
+      ServerIssue _value, $Res Function(ServerIssue) _then)
+      : super(_value, (v) => _then(v as ServerIssue));
 
   @override
-  Forbidden get _value => super._value as Forbidden;
+  ServerIssue get _value => super._value as ServerIssue;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(ServerIssue(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$Forbidden extends Forbidden {
-  const _$Forbidden() : super._();
+class _$ServerIssue extends ServerIssue {
+  const _$ServerIssue(this.message) : super._();
+
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'AppError.forbidden()';
+    return 'AppError.serverIssue(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Forbidden);
+    return identical(this, other) ||
+        (other is ServerIssue &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality().equals(other.message, message)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+
+  @JsonKey(ignore: true)
+  @override
+  $ServerIssueCopyWith<ServerIssue> get copyWith =>
+      _$ServerIssueCopyWithImpl<ServerIssue>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1139,11 +1168,11 @@ class _$Forbidden extends Forbidden {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) {
-    return forbidden();
+    return serverIssue(message);
   }
 
   @override
@@ -1155,11 +1184,11 @@ class _$Forbidden extends Forbidden {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) {
-    return forbidden?.call();
+    return serverIssue?.call(message);
   }
 
   @override
@@ -1171,13 +1200,13 @@ class _$Forbidden extends Forbidden {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
   }) {
-    if (forbidden != null) {
-      return forbidden();
+    if (serverIssue != null) {
+      return serverIssue(message);
     }
     return orElse();
   }
@@ -1191,11 +1220,11 @@ class _$Forbidden extends Forbidden {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) {
-    return forbidden(this);
+    return serverIssue(this);
   }
 
   @override
@@ -1207,11 +1236,11 @@ class _$Forbidden extends Forbidden {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) {
-    return forbidden?.call(this);
+    return serverIssue?.call(this);
   }
 
   @override
@@ -1223,21 +1252,26 @@ class _$Forbidden extends Forbidden {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
   }) {
-    if (forbidden != null) {
-      return forbidden(this);
+    if (serverIssue != null) {
+      return serverIssue(this);
     }
     return orElse();
   }
 }
 
-abstract class Forbidden extends AppError {
-  const factory Forbidden() = _$Forbidden;
-  const Forbidden._() : super._();
+abstract class ServerIssue extends AppError {
+  const factory ServerIssue(String message) = _$ServerIssue;
+  const ServerIssue._() : super._();
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ServerIssueCopyWith<ServerIssue> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1286,7 +1320,7 @@ class _$NoDataFoundException extends NoDataFoundException {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) {
@@ -1302,7 +1336,7 @@ class _$NoDataFoundException extends NoDataFoundException {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) {
@@ -1318,7 +1352,7 @@ class _$NoDataFoundException extends NoDataFoundException {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
@@ -1338,7 +1372,7 @@ class _$NoDataFoundException extends NoDataFoundException {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) {
@@ -1354,7 +1388,7 @@ class _$NoDataFoundException extends NoDataFoundException {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) {
@@ -1370,7 +1404,7 @@ class _$NoDataFoundException extends NoDataFoundException {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
@@ -1432,7 +1466,7 @@ class _$TimeOutError extends TimeOutError {
     required TResult Function() serviceNotFound,
     required TResult Function() sessionExpired,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(String message) serverIssue,
     required TResult Function() noDataFoundException,
     required TResult Function() timeOutError,
   }) {
@@ -1448,7 +1482,7 @@ class _$TimeOutError extends TimeOutError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
   }) {
@@ -1464,7 +1498,7 @@ class _$TimeOutError extends TimeOutError {
     TResult Function()? serviceNotFound,
     TResult Function()? sessionExpired,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(String message)? serverIssue,
     TResult Function()? noDataFoundException,
     TResult Function()? timeOutError,
     required TResult orElse(),
@@ -1484,7 +1518,7 @@ class _$TimeOutError extends TimeOutError {
     required TResult Function(ServiceDownError value) serviceNotFound,
     required TResult Function(SessionExpired value) sessionExpired,
     required TResult Function(UnAuthorized value) unAuthorized,
-    required TResult Function(Forbidden value) forbidden,
+    required TResult Function(ServerIssue value) serverIssue,
     required TResult Function(NoDataFoundException value) noDataFoundException,
     required TResult Function(TimeOutError value) timeOutError,
   }) {
@@ -1500,7 +1534,7 @@ class _$TimeOutError extends TimeOutError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
   }) {
@@ -1516,7 +1550,7 @@ class _$TimeOutError extends TimeOutError {
     TResult Function(ServiceDownError value)? serviceNotFound,
     TResult Function(SessionExpired value)? sessionExpired,
     TResult Function(UnAuthorized value)? unAuthorized,
-    TResult Function(Forbidden value)? forbidden,
+    TResult Function(ServerIssue value)? serverIssue,
     TResult Function(NoDataFoundException value)? noDataFoundException,
     TResult Function(TimeOutError value)? timeOutError,
     required TResult orElse(),
