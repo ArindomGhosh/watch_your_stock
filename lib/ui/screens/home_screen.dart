@@ -15,8 +15,11 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Home page'),
       ),
-      body: const Center(
-        child: Text('Some text here'),
+      body: Container(
+        color: Colors.blue,
+        child: const Center(
+          child: Text('Some text here'),
+        ),
       ),
     );
   }
