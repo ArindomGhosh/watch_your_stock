@@ -17,10 +17,14 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$StockTearOff {
   const _$StockTearOff();
 
-  _Stock call({required String stockName, required String stockWebSocket}) {
+  _Stock call(
+      {required String stockName,
+      required String stockWebSocket,
+      required String stockPrice}) {
     return _Stock(
       stockName: stockName,
       stockWebSocket: stockWebSocket,
+      stockPrice: stockPrice,
     );
   }
 }
@@ -32,6 +36,7 @@ const $Stock = _$StockTearOff();
 mixin _$Stock {
   String get stockName => throw _privateConstructorUsedError;
   String get stockWebSocket => throw _privateConstructorUsedError;
+  String get stockPrice => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $StockCopyWith<Stock> get copyWith => throw _privateConstructorUsedError;
@@ -41,7 +46,7 @@ mixin _$Stock {
 abstract class $StockCopyWith<$Res> {
   factory $StockCopyWith(Stock value, $Res Function(Stock) then) =
       _$StockCopyWithImpl<$Res>;
-  $Res call({String stockName, String stockWebSocket});
+  $Res call({String stockName, String stockWebSocket, String stockPrice});
 }
 
 /// @nodoc
@@ -56,6 +61,7 @@ class _$StockCopyWithImpl<$Res> implements $StockCopyWith<$Res> {
   $Res call({
     Object? stockName = freezed,
     Object? stockWebSocket = freezed,
+    Object? stockPrice = freezed,
   }) {
     return _then(_value.copyWith(
       stockName: stockName == freezed
@@ -66,6 +72,10 @@ class _$StockCopyWithImpl<$Res> implements $StockCopyWith<$Res> {
           ? _value.stockWebSocket
           : stockWebSocket // ignore: cast_nullable_to_non_nullable
               as String,
+      stockPrice: stockPrice == freezed
+          ? _value.stockPrice
+          : stockPrice // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -75,7 +85,7 @@ abstract class _$StockCopyWith<$Res> implements $StockCopyWith<$Res> {
   factory _$StockCopyWith(_Stock value, $Res Function(_Stock) then) =
       __$StockCopyWithImpl<$Res>;
   @override
-  $Res call({String stockName, String stockWebSocket});
+  $Res call({String stockName, String stockWebSocket, String stockPrice});
 }
 
 /// @nodoc
@@ -91,6 +101,7 @@ class __$StockCopyWithImpl<$Res> extends _$StockCopyWithImpl<$Res>
   $Res call({
     Object? stockName = freezed,
     Object? stockWebSocket = freezed,
+    Object? stockPrice = freezed,
   }) {
     return _then(_Stock(
       stockName: stockName == freezed
@@ -101,6 +112,10 @@ class __$StockCopyWithImpl<$Res> extends _$StockCopyWithImpl<$Res>
           ? _value.stockWebSocket
           : stockWebSocket // ignore: cast_nullable_to_non_nullable
               as String,
+      stockPrice: stockPrice == freezed
+          ? _value.stockPrice
+          : stockPrice // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -108,17 +123,22 @@ class __$StockCopyWithImpl<$Res> extends _$StockCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Stock extends _Stock {
-  const _$_Stock({required this.stockName, required this.stockWebSocket})
+  const _$_Stock(
+      {required this.stockName,
+      required this.stockWebSocket,
+      required this.stockPrice})
       : super._();
 
   @override
   final String stockName;
   @override
   final String stockWebSocket;
+  @override
+  final String stockPrice;
 
   @override
   String toString() {
-    return 'Stock(stockName: $stockName, stockWebSocket: $stockWebSocket)';
+    return 'Stock(stockName: $stockName, stockWebSocket: $stockWebSocket, stockPrice: $stockPrice)';
   }
 
   @override
@@ -130,14 +150,18 @@ class _$_Stock extends _Stock {
                     .equals(other.stockName, stockName)) &&
             (identical(other.stockWebSocket, stockWebSocket) ||
                 const DeepCollectionEquality()
-                    .equals(other.stockWebSocket, stockWebSocket)));
+                    .equals(other.stockWebSocket, stockWebSocket)) &&
+            (identical(other.stockPrice, stockPrice) ||
+                const DeepCollectionEquality()
+                    .equals(other.stockPrice, stockPrice)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(stockName) ^
-      const DeepCollectionEquality().hash(stockWebSocket);
+      const DeepCollectionEquality().hash(stockWebSocket) ^
+      const DeepCollectionEquality().hash(stockPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -147,13 +171,17 @@ class _$_Stock extends _Stock {
 
 abstract class _Stock extends Stock {
   const factory _Stock(
-      {required String stockName, required String stockWebSocket}) = _$_Stock;
+      {required String stockName,
+      required String stockWebSocket,
+      required String stockPrice}) = _$_Stock;
   const _Stock._() : super._();
 
   @override
   String get stockName => throw _privateConstructorUsedError;
   @override
   String get stockWebSocket => throw _privateConstructorUsedError;
+  @override
+  String get stockPrice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StockCopyWith<_Stock> get copyWith => throw _privateConstructorUsedError;

@@ -9,5 +9,6 @@ class StockEntity with _$StockEntity {
   const factory StockEntity({
     required String name,
     required String stockWebSocket,
+    required String stockPrice,
   }) = _StockEntity;
 }

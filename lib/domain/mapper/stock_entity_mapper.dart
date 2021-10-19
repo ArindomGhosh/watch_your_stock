@@ -4,13 +4,15 @@ import 'package:watch_my_stock/domain/mapper/i_app_domain_mapper.dart';
 
 class StockEntityMapper
     implements DomainMapper<List<Stock>, List<StockEntity>> {
-
   const StockEntityMapper();
 
   @override
   List<Stock> fromDomainModel(List<StockEntity> domainModel) {
     return domainModel
-        .map((e) => Stock(stockName: e.name, stockWebSocket: e.stockWebSocket))
+        .map((e) => Stock(
+            stockName: e.name,
+            stockWebSocket: e.stockWebSocket,
+            stockPrice: e.stockPrice))
         .toList();
   }
 
@@ -20,6 +22,7 @@ class StockEntityMapper
         .map((e) => StockEntity(
               name: e.stockName,
               stockWebSocket: e.stockWebSocket,
+              stockPrice: e.stockPrice,
             ))
         .toList();
   }

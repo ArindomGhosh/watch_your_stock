@@ -9,5 +9,6 @@ class Stock with _$Stock {
   const factory Stock({
     required String stockName,
     required String stockWebSocket,
+    required String stockPrice,
   }) = _Stock;
 }

@@ -25,7 +25,12 @@ main() {
     () async {
       when(_random.nextBool()).thenAnswer((_) => true);
       final result = await _stockRepo!.getAllStocks();
-      expect(result[0], Stock(stockName: 'Nifty', stockWebSocket: 'ws://nifty.com'));
+      expect(
+          result[0],
+          Stock(
+              stockName: 'Nifty',
+              stockWebSocket: 'ws://nifty.com',
+              stockPrice: '1000'));
     },
   );
 
