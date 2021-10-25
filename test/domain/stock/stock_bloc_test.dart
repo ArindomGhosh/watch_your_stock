@@ -44,7 +44,7 @@ void main() {
         StockState(
             isLoading: false,
             appData: AppData(data: [
-              StockEntity(name: 'MockStock', stockWebSocket: 'ws://mock_shock')
+              StockEntity(name: 'MockStock', stockWebSocket: 'ws://mock_shock',stockPrice: '1000')
             ], appError: null))
       ],
     );

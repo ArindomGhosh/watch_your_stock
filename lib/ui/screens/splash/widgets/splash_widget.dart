@@ -16,7 +16,7 @@ class SplashWidget extends StatelessWidget {
         state.map(
           initial: (_) {},
           userLoggedIn: (userLoggedIn) {
-            context.router.replace(const LoginScreen());
+            context.router.replace(const StockListScreen());
           },
           userLoggedOut: (userLoggedOut) {
             context.router.replace(const LoginScreen());
@@ -25,12 +25,19 @@ class SplashWidget extends StatelessWidget {
       },
       child: Container(
         color: Colors.blue,
-        child: const Center(
-          child: Text(
-            'Watch My Stock',
-            style: TextStyle(color: Colors.black, fontSize: 30.0),
-          ),
-        ),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Text(
+                'Watch My Stock',
+                style: TextStyle(color: Colors.black, fontSize: 30.0),
+              ),
+              SizedBox(height: 50.0,),
+              CircularProgressIndicator(
+                color: Colors.deepOrangeAccent,
+              ),
+            ]),
       ),
     );
   }
