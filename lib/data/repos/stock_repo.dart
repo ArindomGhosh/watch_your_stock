@@ -14,19 +14,35 @@ class StockRepo implements IStockRepo {
   }
 
   List<Stock> _dummyResponse() {
-    if (_random.nextBool()) {
+    // if (_random.nextBool()) {
       return [
-        Stock(stockName: 'Nifty', stockWebSocket: 'ws://nifty.com'),
-        Stock(stockName: 'BSE', stockWebSocket: 'ws://bse.com'),
-        Stock(
+        const Stock(
+            stockName: 'nifty',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '1000'),
+        const Stock(
+            stockName: 'bse',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '2000'),
+        const Stock(
             stockName: 'Tata Capitals',
-            stockWebSocket: 'ws://tatacapitals.com'),
-        Stock(stockName: 'ICICI', stockWebSocket: 'ws://icici.com'),
-        Stock(stockName: 'Zomato', stockWebSocket: 'ws://zomato.com'),
-        Stock(stockName: 'HDFC', stockWebSocket: 'ws://hdfc.com'),
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '1001'),
+        const Stock(
+            stockName: 'ICICI',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '5000'),
+        const Stock(
+            stockName: 'Zomato',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '10000'),
+        const Stock(
+            stockName: 'HDFC',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '100'),
       ];
-    } else {
+    /*} else {
       return [];
-    }
+    }*/
   }
 }

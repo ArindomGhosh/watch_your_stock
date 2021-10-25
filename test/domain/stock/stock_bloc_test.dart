@@ -7,8 +7,8 @@ import 'package:watch_my_stock/data/repos/i_stock_repo.dart';
 import 'package:watch_my_stock/domain/entities/app_data.dart';
 import 'package:watch_my_stock/domain/entities/app_error.dart';
 import 'package:watch_my_stock/domain/entities/stock_entity.dart';
-import 'package:watch_my_stock/domain/stock/stock_state.dart';
 import 'package:watch_my_stock/domain/stock/stock_cubit.dart';
+import 'package:watch_my_stock/domain/stock/stock_state.dart';
 
 import 'stock_bloc_test.mocks.dart';
 
@@ -19,8 +19,12 @@ void main() {
     MockIStockRepo mockIStockRepo = MockIStockRepo();
     setUp(() {
       stockCubit = StockCubit(mockIStockRepo);
-      when(mockIStockRepo.getAllStocks()).thenAnswer((_) => Future(() =>
-          [const Stock(stockName: 'MockStock', stockWebSocket: 'ws://mock_shock')]));
+      when(mockIStockRepo.getAllStocks()).thenAnswer((_) => Future(() => [
+            const Stock(
+                stockName: 'MockStock',
+                stockWebSocket: 'ws://mock_shock',
+                stockPrice: '1000')
+          ]));
     });
     tearDown(() {
       stockCubit.close();
@@ -40,7 +44,7 @@ void main() {
         StockState(
             isLoading: false,
             appData: AppData(data: [
-              StockEntity(name: 'MockStock', stockWebSocket: 'ws://mock_shock')
+              StockEntity(name: 'MockStock', stockWebSocket: 'ws://mock_shock',stockPrice: '1000')
             ], appError: null))
       ],
     );
