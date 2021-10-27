@@ -23,8 +23,8 @@ class UserAuthCubit extends Cubit<UserAuthState> {
       isLoading: true,
       email: email,
       password: password,
+      appData: null
     ));
-
     _performAuthAction(
       _authRepo.signIn(
         UserAuthRequest(
@@ -43,6 +43,7 @@ class UserAuthCubit extends Cubit<UserAuthState> {
       isLoading: true,
       email: email,
       password: password,
+      appData: null
     ));
     _performAuthAction(
       _authRepo.signUp(

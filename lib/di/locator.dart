@@ -12,6 +12,7 @@ import 'package:watch_my_stock/domain/auth/i_user_component.dart';
 import 'package:watch_my_stock/domain/auth/user_auth_check/user_log_check_cubit.dart';
 import 'package:watch_my_stock/domain/auth/user_auth_cubit.dart';
 import 'package:watch_my_stock/domain/auth/user_component.dart';
+import 'package:watch_my_stock/domain/host/host_cubit.dart';
 import 'package:watch_my_stock/domain/stock/stock_cubit.dart';
 import 'package:watch_my_stock/domain/stock_socket/stock_update_cubit.dart';
 
@@ -25,6 +26,7 @@ void init() {
   getIt.registerFactory(() => UserAuthCubit(getIt()));
   getIt.registerFactory(() => StockCubit(getIt()));
   getIt.registerFactory(() => StockUpdateCubit(getIt()));
+  getIt.registerFactory(() => HostCubit(getIt()));
   // repo
   getIt.registerLazySingleton<IAuthRepo>(() => FakeAuthRepo(getIt(), getIt()));
   getIt.registerLazySingleton<IStockRepo>(() => StockRepo(getIt()));

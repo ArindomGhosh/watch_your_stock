@@ -40,10 +40,25 @@ class _LoginWidgetState extends State<LoginWidget> {
           }
         },
         builder: (context, state) {
-          return _initialState(
-            context,
-            _emailController,
-            _passwordController,
+          return Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              Visibility(
+                child: const CircularProgressIndicator(),
+                visible: state.isLoading,
+              ),
+              AbsorbPointer(
+                absorbing: state.isLoading,
+                child: Opacity(
+                  opacity: state.isLoading ? 0.5 : 1.0,
+                  child: _initialState(
+                    context,
+                    _emailController,
+                    _passwordController,
+                  ),
+                ),
+              ),
+            ],
           );
         },
       ),

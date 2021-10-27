@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watch_my_stock/di/locator.dart';
 import 'package:watch_my_stock/domain/stock/stock_cubit.dart';
+import 'package:watch_my_stock/ui/screens/host/host_screen.dart';
 import 'package:watch_my_stock/ui/screens/stock/widget/stock_widget.dart';
 
 class StockListScreen extends StatelessWidget {
@@ -9,8 +10,11 @@ class StockListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (_) => getIt.get<StockCubit>()..getAllStocks(),
-        child: const StockWidget());
+    return HostScreen(
+      screenTitle: "Stock Page",
+      child: BlocProvider(
+          create: (_) => getIt.get<StockCubit>()..getAllStocks(),
+          child: const StockWidget()),
+    );
   }
 }
