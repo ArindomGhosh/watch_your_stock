@@ -10,12 +10,9 @@ class WatchMyStockApp extends StatelessWidget {
   final _appRouter = AppRouter();
 
   @override
-  Widget build(BuildContext context) => BlocProvider(
-        create: (_) => getIt.get<HostCubit>(),
-        child: MaterialApp.router(
-          title: 'WatchYourStock',
-          routeInformationParser: _appRouter.defaultRouteParser(),
-          routerDelegate: _appRouter.delegate(),
-        ),
-      );
+  Widget build(BuildContext context) => MaterialApp.router(
+    title: 'WatchYourStock',
+    routeInformationParser: _appRouter.defaultRouteParser(),
+    routerDelegate: _appRouter.delegate(),
+  );
 }
