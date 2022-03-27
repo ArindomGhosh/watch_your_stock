@@ -40,6 +40,53 @@ class StockRepo implements IStockRepo {
             stockName: 'HDFC',
             stockWebSocket: 'ws://10.0.2.2:8080',
             stockPrice: '100'),
+        const Stock(
+            stockName: 'nifty',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '1000'),
+        const Stock(
+            stockName: 'bse',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '2000'),
+        const Stock(
+            stockName: 'Tata Capitals',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '1001'),
+        const Stock(
+            stockName: 'ICICI',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '5000'),
+        const Stock(
+            stockName: 'Zomato',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '10000'),
+        const Stock(
+            stockName: 'HDFC',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '100'),const Stock(
+            stockName: 'nifty',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '1000'),
+        const Stock(
+            stockName: 'bse',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '2000'),
+        const Stock(
+            stockName: 'Tata Capitals',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '1001'),
+        const Stock(
+            stockName: 'ICICI',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '5000'),
+        const Stock(
+            stockName: 'Zomato',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '10000'),
+        const Stock(
+            stockName: 'HDFC',
+            stockWebSocket: 'ws://10.0.2.2:8080',
+            stockPrice: '100'),
       ];
     /*} else {
       return [];

@@ -50,7 +50,7 @@ void main() {
     );
   });
 
-  group('test Stock Cubit for success', () {
+  group('test Stock Cubit for failure', () {
     late StockCubit stockCubit;
     MockIStockRepo mockIStockRepo = MockIStockRepo();
     setUp(() {
